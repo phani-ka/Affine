@@ -1,0 +1,117 @@
+apiVersion: v1
+kind: persistentvolume
+metadata:
+   name: abc-pv
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  storageClassName: standard
+  hostPath:
+     path: /opt/abcd-app
+----------------------
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+   name: abc-pvc
+spec:
+   accessModes:
+      - ReadWriteOnce
+   resources:
+     requests:
+	   storage: 1Gi
+   storageClassName: standard
+   volumeName: abc-pv
+---------------------------------
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-storage
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+---------------------
+aws s3 rm s3://bucket-name --recursive
+------------------
+wget https://s3.amazonaws.com/mountpoint-s3-release/latest/x86_64/mount-s3.rpm
+sudo yum install -y ./mount-s3.rpm
+
+o mount your bucket, run this command, replacing DOC-EXAMPLE-BUCKET with the name of your bucket and /path/to/mount with the directory you want to mount the bucket to:
+
+mount-s3 DOC-EXAMPLE-BUCKET /path/to/mount
+Now you can work with your bucket contents as if they were a local file system:
+
+ls /path/to/mount
+echo "Hello World!" > /path/to/mount/Data.txt
+cat /path/to/mount/Data.txt
+---------------------
+kphani7
+grq2wzpo6mpmnnmpsg2ralumywby5tyokgzhe2trnkhw23yj5gha
+
+
+
+WEBSITE_DYNAMIC_CACHE
+WEBSITE_LOCAL_CACHE_OPTION
+
+
+az ad sp create-for-rbac --name myservicesprincipale --role Contributor --scopes /subscriptions/4ed76303-614b-4de4-8097-793d9f8cfe2d
+
+
+
+{
+  "appId": "d734ee26-f0db-4e82-8d2f-63016d1106b0",
+  "displayName": "myservicesprincipale",
+  "password": "1Sj8Q~YjTSdA7mKS4ge.iDhPEa30_ybKf4d1gckW",
+  "tenant": "7dd1093a-8151-4f0b-af98-fda559ab9d5a"
+}
+
+
+az login --servic-principal -u d734ee26-f0db-4e82-8d2f-63016d1106b0 -p 1Sj8Q~YjTSdA7mKS4ge.iDhPEa30_ybKf4d1gckW --tenant 7dd1093a-8151-4f0b-af98-fda559ab9d5a
+
+
+
+provider file
+
+
+terraform { 
+
+backend "azurerm" {
+      resource_group_name  = "terrademo-rg"
+      storage_account_name = "abcdaz"
+      container_name       = "prod-tfbackend"
+      key                  = "terraform.tfstate"
+  }
+  }
+   
+      terrademo-rg
+      terrademo-rg
+	  
+	  abcdaz
+	  abcdaz
+	  
+	  
+/home/vsts/work/1/s/target/my-app-1.0-SNAPSHOT.jar
+
+
+ 3 years, 7 months, 19 days excluding the end date.
+          6 months, 17 days excluding the end date.
+
+
+
+Immediate Joiner [DevOps Engineer] | AWS | Azure | Git | GitLab| GitHub | Jenkins | Azure Devops | Ansible |Linux| Shell Scripting | Docker | Kubernetes | AKS|Terraform
+
+
+www.linkedin.com/in/phaneendra-kambala-78402a259
+
+
+https://developers.google.com/profile/u/111082113580585707361
+https://developers.google.com/profile/u/101611532310316783142
+
+
+
+M.Sc. in Information Technology with over 4+ years of experience as a DevOps Engineer.Hands-on Experience in DevOps tools like Git, Gitlab, Maven, Nexus, Jenkins, Ansible, Docker, Kubernetes, Azure and Aws, Azure DevOps,Terraform.Have Good Working experience on Linux and Windows platforms. Worked on shell scripting to automate manual and repetitive tasks. Hands-on experience in the installation and configuration of Git. Experience in using a build tool like a Maven. Strong exposure in utilizing Jenkins and as the CI/CD tool and built the code integration, code delivery, and release pipelines. Configure jobs and pipelines using Azure DevOps Pipeline, and troubleshoot problems arising from Build failures. Experience in artifact management tools like Nexus, and Stores the project dependencies by using Nexus. Administered and implemented Continuous Integration using Jenkins for deployments. Expertise in writing Groovy script for Jenkins Pipelines to automate the complete CI/CD for Java-based applications. Experience in configuration management tools like Ansible.
+
+
+
+
+

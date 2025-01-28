@@ -1,0 +1,18 @@
+appVersion: apps/v1
+kind: Replicaset
+metadata:
+     name: replicaset-demo
+Spec:
+   replicas: 5 
+   selector: 
+     matchLabels:
+         tire: frontend
+         app: nginx
+   template: 
+     metadata: 
+        labels: 
+          tire: frontend
+     spec: 
+       containers:
+       - name: nginx pod 
+         image: nginx:latest 
