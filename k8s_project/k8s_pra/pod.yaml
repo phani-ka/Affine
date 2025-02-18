@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+spec:
+  containers:
+    container:
+      - name: myapp
+        image: nginx
+        port: 80
+        targetPort: 8734

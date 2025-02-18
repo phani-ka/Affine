@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: wordpress
+    meta.helm.sh/release-namespace: default  # Name of the PVC
+spec:
+  accessModes:
+    - ReadWriteOnce  # Must match the PV's access mode
+  resources:
+    requests:
+      storage: 10Gi  # Must match or be less than the PV's capacity
+  storageClassName: manual  # Must match the PV's StorageClass (if specified)
