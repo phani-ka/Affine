@@ -9266,4 +9266,102 @@ Events:
   ----    ------         ----                     ----                         -------
   Normal  FailedBinding  2d18h (x241 over 2d19h)  persistentvolume-controller  no persistent volumes available for this claim and no storage class is set
   Normal  FailedBinding  96s (x201 over 51m)      persistentvolume-controller  no persistent volumes available for this claim and no storage class is set
-[?2004h]0;root@phaneendra-VirtualBox: ~root@phaneendra-VirtualBox:~# kubectl describe pvc data-wordpress-mariadb-0
+[?2004h]0;root@phaneendra-VirtualBox: ~root@phaneendra-VirtualBox:~# kubectl describe pvc data-wordpress-mariadb-0=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2025.02.27 12:38:41 =~=~=~=~=~=~=~=~=~=~=~=
+Using username "root".
+root@192.168.1.43's password: 
+
+Last login: Fri Feb 21 13:57:30 2025 from 192.168.1.40
+[?2004h]0;root@phaneendra-VirtualBox: ~root@phaneendra-VirtualBox:~# ls -al
+[?2004ltotal 108
+drwx------ 13 root root  4096 Feb 18 19:25 [0m[01;34m.[0m
+drwxr-xr-x 22 root root  4096 Jan 17 11:57 [01;34m..[0m
+drwxr-xr-x 14 root root  4096 Feb 18 05:28 [01;34mAffine[0m
+-rw-------  1 root root  4096 Feb 21 15:32 .bash_history
+-rw-r--r--  1 root root  3106 Apr 22  2024 .bashrc
+drwx------  4 root root  4096 Feb 17 14:15 [01;34m.cache[0m
+drwxr-xr-x  3 root root  4096 Feb 17 14:15 [01;34m.config[0m
+-rw-r--r--  1 root root   153 Feb 17 20:05 demopod.yaml
+drwx------  3 root root  4096 Jan 20 16:49 [01;34m.docker[0m
+drwxr-xr-x  2 root root  4096 Jan 28 18:52 [01;34mdockerapp[0m
+-rw-r--r--  1 root root    56 Feb 18 07:04 .gitconfig
+drwxr-xr-x  4 root root  4096 Feb 17 12:10 [01;34mhelloworld[0m
+-rw-r--r--  1 root root   135 Feb 17 20:50 helmfile.yaml
+-rw-r--r--  1 root root  1567 Jan 29 18:25 k0s.yaml
+drwxr-x---  3 root root  4096 Feb 17 11:04 [01;34m.kube[0m
+-rw-------  1 root root    20 Jan 29 18:28 .lesshst
+drwxr-xr-x  3 root root  4096 Jan 20 16:48 [01;34m.m2[0m
+drwxr-xr-x 10 root root  4096 Jan 29 18:10 [01;34m.minikube[0m
+-rw-r--r--  1 root root   161 Apr 22  2024 .profile
+drwxr-xr-x  4 root root  4096 Feb 17 20:23 [01;34mpythonflask[0m
+drwx------  2 root root  4096 Jan 10 21:46 [01;34m.ssh[0m
+-rw-r--r--  1 root root  1753 Jan 29 18:21 token-file
+-rw-------  1 root root 12928 Feb 18 19:25 .viminfo
+-rw-r--r--  1 root root   165 Feb 17 20:37 .wget-hsts
+[?2004h]0;root@phaneendra-VirtualBox: ~root@phaneendra-VirtualBox:~# cd afi[K[K[KAffine/
+[?2004l[?2004h]0;root@phaneendra-VirtualBox: ~/Affineroot@phaneendra-VirtualBox:~/Affine# ll
+[?2004ltotal 1708
+drwxr-xr-x 14 root root    4096 Feb 18 05:28  [0m[01;34m.[0m/
+drwx------ 13 root root    4096 Feb 18 19:25  [01;34m..[0m/
+drwxr-xr-x  2 root root    4096 Jan 28 18:02  [01;34mArchitecture[0m/
+drwxr-xr-x  2 root root    4096 Jan 28 18:02  [01;34mazureproject[0m/
+drwxr-xr-x  3 root root    4096 Feb 17 15:27  [01;34mAzure_Terraform_WebApp[0m/
+-rw-r--r--  1 root root 1685415 Feb 17 15:27 'Budget 2025 Tax Calculator.xlsx'
+drwxr-xr-x  5 root root    4096 Jan 28 18:02  [01;34mdemo_intellitag[0m/
+drwxr-xr-x 18 root root    4096 Feb 17 15:27  [01;34mdevops_pra[0m/
+drwxr-xr-x  2 root root    4096 Jan 28 18:02  [01;34mDocker_k8s[0m/
+drwxr-xr-x  8 root root    4096 Feb 18 07:04  [01;34m.git[0m/
+drwxr-xr-x  2 root root    4096 Jan 28 18:02  [01;34mgolang_pra[0m/
+drwxr-xr-x  3 root root    4096 Feb 18 06:29  [01;34mhelm_chart[0m/
+drwxr-xr-x  4 root root    4096 Jan 29 18:37  [01;34mk8s_project[0m/
+drwxr-xr-x  2 root root    4096 Feb 18 19:25  [01;34mlinux_shellscript[0m/
+drwxr-xr-x  2 root root    4096 Feb 17 15:27  [01;34mPython[0m/
+-rw-r--r--  1 root root     374 Jan 28 18:02 'Untitled Diagram.drawio'
+[?2004h]0;root@phaneendra-VirtualBox: ~/Affineroot@phaneendra-VirtualBox:~/Affine# git push[K[K[K[K[K[K[K[Kgit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mlinux_shellscript/jenkinsbackup.sh[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;root@phaneendra-VirtualBox: ~/Affineroot@phaneendra-VirtualBox:~/Affine# git commite -a[Km"addjenkins"
+[?2004lgit: 'commite' is not a git command. See 'git --help'.
+
+The most similar command is
+	commit
+[?2004h]0;root@phaneendra-VirtualBox: ~/Affineroot@phaneendra-VirtualBox:~/Affine# git commite -m"addjenkins"[1P -m"addjenkins"
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mlinux_shellscript/jenkinsbackup.sh[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;root@phaneendra-VirtualBox: ~/Affineroot@phaneendra-VirtualBox:~/Affine# git commit -m"addjenkins"e -m"addjenkins"[1P -m"addjenkins"[Kgit add .
+[?2004l[?2004h]0;root@phaneendra-VirtualBox: ~/Affineroot@phaneendra-VirtualBox:~/Affine# git add .commit -m"addjenkins"
+[?2004l[main 4777a88] addjenkins
+ 1 file changed, 17 insertions(+)
+ create mode 100644 linux_shellscript/jenkinsbackup.sh
+[?2004h]0;root@phaneendra-VirtualBox: ~/Affineroot@phaneendra-VirtualBox:~/Affine# git pull
+[?2004lremote: Enumerating objects: 29, done.[K
+remote: Counting objects:  50% (1/2)[Kremote: Counting objects: 100% (2/2)[Kremote: Counting objects: 100% (2/2), done.[K
+Unpacking objects:   3% (1/29)Unpacking objects:   6% (2/29)Unpacking objects:  10% (3/29)Unpacking objects:  13% (4/29)Unpacking objects:  17% (5/29)Unpacking objects:  20% (6/29)Unpacking objects:  24% (7/29)Unpacking objects:  24% (7/29), 5.55 MiB | 4.44 MiB/sUnpacking objects:  27% (8/29), 5.55 MiB | 4.44 MiB/sUnpacking objects:  31% (9/29), 7.27 MiB | 3.18 MiB/sUnpacking objects:  34% (10/29), 7.27 MiB | 3.18 MiB/sUnpacking objects:  34% (10/29), 14.99 MiB | 4.53 MiB/sUnpacking objects:  34% (10/29), 20.70 MiB | 4.80 MiB/sUnpacking objects:  37% (11/29), 23.88 MiB | 4.96 MiB/sUnpacking objects:  41% (12/29), 25.73 MiB | 3.56 MiB/sUnpacking objects:  44% (13/29), 25.73 MiB | 3.56 MiB/sUnpacking objects:  48% (14/29), 25.73 MiB | 3.56 MiB/sUnpacking objects:  51% (15/29), 25.73 MiB | 3.56 MiB/sUnpacking objects:  55% (16/29), 25.73 MiB | 3.56 MiB/sUnpacking objects:  58% (17/29), 29.84 MiB | 3.96 MiB/sUnpacking objects:  62% (18/29), 29.84 MiB | 3.96 MiB/sUnpacking objects:  65% (19/29), 29.84 MiB | 3.96 MiB/sUnpacking objects:  68% (20/29), 29.84 MiB | 3.96 MiB/sUnpacking objects:  72% (21/29), 33.18 MiB | 3.77 MiB/sUnpacking objects:  75% (22/29), 33.18 MiB | 3.77 MiB/sUnpacking objects:  79% (23/29), 33.18 MiB | 3.77 MiB/sUnpacking objects:  82% (24/29), 33.18 MiB | 3.77 MiB/sUnpacking objects:  86% (25/29), 33.18 MiB | 3.77 MiB/sUnpacking objects:  89% (26/29), 33.18 MiB | 3.77 MiB/sremote: Total 29 (delta 2), reused 2 (delta 2), pack-reused 27 (from 1)[K
+Unpacking objects:  93% (27/29), 35.46 MiB | 4.16 MiB/sUnpacking objects:  96% (28/29), 35.46 MiB | 4.16 MiB/sUnpacking objects: 100% (29/29), 35.46 MiB | 4.16 MiB/sUnpacking objects: 100% (29/29), 35.68 MiB | 3.89 MiB/s, done.
+From https://github.com/phani-ka/Affine
+   65266ff..e536493  main       -> origin/main
+[33mhint: You have divergent branches and need to specify how to reconcile them.[m
+[33mhint: You can do so by running one of the following commands sometime before[m
+[33mhint: your next pull:[m
+[33mhint: [m
+[33mhint:   git config pull.rebase false  # merge[m
+[33mhint:   git config pull.rebase true   # rebase[m
+[33mhint:   git config pull.ff only       # fast-forward only[m
+[33mhint: [m
+[33mhint: You can replace "git config" with "git config --global" to set a default[m
+[33mhint: preference for all repositories. You can also pass --rebase, --no-rebase,[m
+[33mhint: or --ff-only on the command line to override the configured default per[m
+[33mhint: invocation.[m
+fatal: Need to specify how to reconcile divergent branches.
+[?2004h]0;root@phaneendra-VirtualBox: ~/Affineroot@phaneendra-VirtualBox:~/Affine# 
