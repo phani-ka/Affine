@@ -41,7 +41,7 @@ resource "aws_db_instance" "dev_db_instance" {
     engine_version = "5.7"
     instance_class = "db.t2.medium"
     db_name = "dev_db"
-    username  = "adminuser"
+    username  = 
     password = data.aws_secretsmanager_secret_version.db_secret_version.secret_string
     publicly_accessible = true 
     db_subnet_group_name = aws_db_subnet_group.dev_subnet_group.id 
