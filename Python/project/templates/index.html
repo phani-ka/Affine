@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Analysis Tool</h1>
+        
+        <form id="analysis-form">
+            <textarea id="text-input" name="text" placeholder="Enter text to analyze..." required></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+        
+        <div id="loading" style="display: none;">Analyzing...</div>
+        
+        <div id="results">
+            <div class="result-section">
+                <h2>Sentiment Analysis</h2>
+                <div id="sentiment-result"></div>
+                <div id="sentiment-details"></div>
+            </div>
+            
+            <div class="result-section">
+                <h2>Text Statistics</h2>
+                <div id="stats-result"></div>
+            </div>
+            
+            <div class="result-section">
+                <h2>Named Entities</h2>
+                <div id="entities-result"></div>
+            </div>
+            
+            <div class="result-section">
+                <h2>Common Nouns</h2>
+                <div id="nouns-result"></div>
+            </div>
+            
+            <div class="result-section">
+                <h2>Key Phrases</h2>
+                <div id="phrases-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('analysis-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const text = document.getElementById('text-input').value;
+            const loading = document.getElementById('loading');
+            const results = document.getElementById('results');
+            
+            loading.style.display = 'block';
+            results.style.display = 'none';
+            
+            fetch('/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `text=${encodeURIComponent(text)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                loading.style.display = 'none';
+                results.style.display = 'block';
+                
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+                
+                // Display results
+                document.getElementById('sentiment-result').textContent = 
+                    `Overall sentiment: ${data.sentiment}`;
+                
+                document.getElementById('sentiment-details').innerHTML = `
+                    Polarity: ${data.polarity.toFixed(2)} (range: -1 to 1)<br>
+                    Subjectivity: ${data.subjectivity.toFixed(2)} (range: 0 to 1)
+                `;
+                
+                document.getElementById('stats-result').innerHTML = `
+                    Word count: ${data.word_count}<br>
+                    Sentence count: ${data.sentence_count}<br>
+                    Average word length: ${data.avg_word_length.toFixed(1)} characters
+                `;
+                
+                document.getElementById('entities-result').innerHTML = 
+                    data.entities.length > 0 
+                        ? data.entities.map(e => `
+                            <div class="entity">
+                                <strong>${e.text}</strong> (${e.type})
+                            </div>
+                        `).join('')
+                        : 'No named entities detected';
+                
+                document.getElementById('nouns-result').innerHTML = 
+                    data.common_nouns.length > 0
+                        ? data.common_nouns.map(n => `<div class="noun">${n}</div>`).join('')
+                        : 'No nouns detected';
+                
+                document.getElementById('phrases-result').innerHTML = 
+                    data.key_phrases.map(p => `<div class="phrase">"${p}"</div>`).join('');
+            })
+            .catch(error => {
+                loading.style.display = 'none';
+                alert('Error: ' + error.message);
+            });
+        });
+    </script>
+</body>
+</html>
