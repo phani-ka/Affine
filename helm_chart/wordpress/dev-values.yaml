@@ -1,0 +1,8 @@
+wordpressUsername: devops
+wordpressPassword: azuredevops
+wordpressEmail: kphani7@outlook.com
+wordpressFirstName: devops
+wordpressLastName: azure
+wordpressBlogName: devopsazure.com
+service: 
+  type: NodePort
